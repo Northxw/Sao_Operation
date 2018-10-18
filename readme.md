@@ -1,1 +1,1 @@
-	如题所述，用Python做些骚操作，感受Python的强大，更注重于加强对Python知识的强化
+&emsp; As mentioned in the title, use Python to do some operations, feel the power of Python, and pay more attention to strengthening the knowledge of Python.
