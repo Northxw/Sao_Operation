@@ -36,7 +36,7 @@ class Sms(object):
         """
         target_date = self.parse_date()
         for name, date in DATE.items():
-            if date == target_date:                           # 判断目标日期是否包含在DATE.keys()
+            if date == target_date:                           # 遍历DATE字典,判断目标日期是否包含在DATE.keys()
                 body = name + ', ' + BODY                     # 根据节日不同, 发送内容不同的短信
                 phone_number = CONTACT_PHONE_NUMBER[name]     # 设置接收短信者
                 try:
