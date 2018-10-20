@@ -23,10 +23,10 @@ wait = WebDriverWait(driver, 30)
 login = wait.until(EC.presence_of_element_located((By.ID, 'com.tencent.mm:id/drp')))    # 微信欢迎页面登录按钮
 login.click()
 phone_password = wait.until(EC.presence_of_element_located((By.ID, 'com.tencent.mm:id/ji')))     # 输入手机号的文本栏
-phone_password.set_text('13201723305')
+phone_password.set_text('132****3305')
 next_login = wait.until(EC.presence_of_element_located((By.ID, 'com.tencent.mm:id/ast')))     # 下一步
 next_login.click()
-phone_password.send_keys('ALSD1678')    # 密码输入框的ID和手机号输入框的ID相同,所以不重复获取
+phone_password.send_keys('A******8')    # 密码输入框的ID和手机号输入框的ID相同,所以不重复获取
 
 try:
     next_login.click()          # 最后的登录按钮ID与欢迎界面的登录按钮的ID相同,不重复获取
