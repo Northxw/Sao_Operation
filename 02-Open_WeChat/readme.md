@@ -16,11 +16,19 @@
 
 #### 提示
 &emsp; 操作过程中可能出现的错误我列举几点：
-+ 安卓手机与PC端连接异常（记得打开手机的开发者模式）
++ 安卓手机与PC端连接异常（记得打开手机的开发者模式）,可以在命令行输入下面代码来测试:
+```
+adb devices -l
+```
+如果出现如下界面，即连接正常：
+```
+List of devices attached
+a468ec5c               device product:PD1602 model:vivo_X7 device:PD1602 transport_id:4
+```
 + 错误反馈中包含 "Can't not found Java..."，没有Java环境，所以一定要提前配置好Java环境
 + 设置的启动参数有误
 
-&emsp; 最后的重要提示: <font color="#dd0000">提前退出微信登录，并且一定要保持手机处于解锁常亮状态！</font><br/>
+&emsp; 最后的**重要提示**: <font color="#dd0000">提前退出微信登录，并且一定要保持手机处于解锁常亮状态！</font><br/>
 
 #### 其他
 &emsp; 程序的可扩展性很高，例如短信验证码登录，设置更加具体的异常处理模块等等
