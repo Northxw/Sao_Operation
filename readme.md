@@ -1,1 +1,1 @@
-&emsp; As mentioned in the title, use Python to do some operations, feel the power of Python, and pay more attention to strengthening the knowledge of Python.
+&emsp; 使用twilio库发送短信（在特定日期向特定对象发送短信） twilio的Github地址：https://github.com/twilio/twilio-python
