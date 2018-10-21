@@ -1,8 +1,13 @@
 # -*- coding:utf-8 -*-
+"""
+Create at 19:03 on Oct 21,2018
+@title: 在线安装App
+@author: Northxw
+"""
 
 from appium import webdriver
-from App_For_Android.utils.config import *
-from App_For_Android.utils.url import Get_Download_Url
+from .utils.config import *
+from .utils.url import Get_Download_Url
 
 APP_VALUE = Get_Download_Url().download_url()   # 创建下载链接的对象并初始化
 
