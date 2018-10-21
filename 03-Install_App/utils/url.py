@@ -64,9 +64,9 @@ class Get_Download_Url(object):
         合并、简化函数
         :return: 手机应用的下载链接
         """
-        response = self.request()
-        download_detail_url = self.parse(response)
-        apk_download_url = self.get(download_detail_url)
+        response = self.request()   # 发送请求
+        download_detail_url = self.parse(response)  # 解析网页
+        apk_download_url = self.get(download_detail_url)    # 获取下载链接
         return apk_download_url
 
 if __name__ == '__main__':
