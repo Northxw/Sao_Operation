@@ -6,7 +6,7 @@ Created at 18:31 on Oct 10,2018
 """
 
 from appium import webdriver
-from App_For_Android.utils.config import *
+from .utils.config import *
 import os
 
 # 获取当前项目的根路径
