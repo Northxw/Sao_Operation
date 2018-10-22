@@ -6,7 +6,7 @@ import re
 class Processor():
     def date(self, datetime):
         """
-        处理时间
+        格式化时间
         :param date: 原始时间
         :return: 处理后时间
         """
