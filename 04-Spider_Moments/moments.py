@@ -53,7 +53,7 @@ class Moments(object):
         determine.click()
 
     def enter(self):
-        sleep(150)   # 确定通讯录匹配后进入微信,会加载微信的本地数据,耗时较长,特设置延时等待(等待节点加载出来,可灵活配置)
+        sleep(120)   # 确定通讯录匹配后进入微信,会加载微信的本地数据,耗时较长,特设置延时等待(等待节点加载出来,可灵活配置)
                      # 等待过程,可手动刷新登录后的界面, 方便下一步操作
         # 选项卡
         tab = self.wait.until(EC.presence_of_element_located((By.ID, 'com.tencent.mm:id/azn')))
