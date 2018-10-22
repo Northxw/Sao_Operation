@@ -22,7 +22,7 @@ class Get_Download_Url(object):
         """
         request_ = urllib.request.Request(url=self.url, headers=self.headers)  # 构建Request类
         response = urllib.request.urlopen(request_)     # 发送请求,返回结果
-        if response.status == 200:
+        if response.status == 200:  # 状态码200,正常返回,return结果
             return response
         else:
             print('Something Wrong!')
@@ -53,10 +53,10 @@ class Get_Download_Url(object):
         apk_downlaod_url = ''
         response = urllib.request.urlopen(url)  # 发送请求,返回结果
         doc = pq(response.read())
-        href = doc('.apk_info_box .dl_area .btn_trig #quickDown').items()
+        href = doc('.apk_info_box .dl_area .btn_trig #quickDown').items()   # 结果为生成器,遍历获取; 获取的节点类型为PyQuery,可继续向下查询.
         for _ in href:
-            apk_downlaod_url = _.attr('href')
-            break
+            apk_downlaod_url = _.attr('href')   # 通过attr()方法获取节点的href属性值
+            break                           # 一般情况下,精确搜索的第一个结果就是想要的,所以直接break.当然,这里做的有点欠妥.
         return apk_downlaod_url
 
     def download_url(self):
@@ -70,5 +70,5 @@ class Get_Download_Url(object):
         return apk_download_url
 
 if __name__ == '__main__':
-    app = Get_Download_Url()
-    app.download_url()
+    app = Get_Download_Url()    # 创建获取下载链接的对象
+    app.download_url()  # 调用方法
