@@ -23,8 +23,8 @@ DRIVER_SERVER = 'http://localhost:4723/wd/hub'
 TIMEOUT = 300
 
 # 微信登录的手机号和密码
-USERNAME = '13201723305'
-PASSWORD = 'ALSD1678'
+USERNAME = '***********'    # 你的手机号码
+PASSWORD = '***********'    # 你的微信账号密码
 
 # 滑动点
 FLICK_START_X = 300
@@ -32,7 +32,7 @@ FLICK_START_Y = 300
 FLICK_DISTANCE = 700
 
 # 滑动的间隔时间
-SCROLL_SLEEP_TIME = 10
+SCROLL_SLEEP_TIME = 10  # 设置间隔10秒时为了每条朋友圈能完全加载出来
 
 # MongoDB配置
 MONGO_URL = 'localhost'
