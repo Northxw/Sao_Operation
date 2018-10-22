@@ -8,7 +8,7 @@ Created at 23:16 on Oct 19,2018
 from twilio.rest import Client
 from datetime import datetime
 from traceback import format_exc
-from Twilio.utils.config import *
+from .utils.config import *
 
 class Sms(object):
     def __init__(self, account=TWILIO_ACCOUNT_SID, token=TWILIO_AUTH_TOKEN):
