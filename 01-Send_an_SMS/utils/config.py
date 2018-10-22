@@ -1,3 +1,5 @@
+# -*- coding:utf-8 -*-
+
 # YOUR PHONE NUMBER
 YOUR_PHONE_NUMBER = 'Your Phone Number'    # 测试用
 # MESSAGES_BODY
@@ -23,6 +25,6 @@ CONTACT_PHONE_NUMBER = {
     'Dad': '+8618888888888',
     'Mom': '+8618888888888',
     'Baby': '+8618888888888',
-    'Me': '+86132***3305'   # 测试用，请填写自己再Twilio注册时的手机号码
+    'Me': '+86*********'   # 测试用，请填写自己再Twilio注册时的手机号码
 }
 
