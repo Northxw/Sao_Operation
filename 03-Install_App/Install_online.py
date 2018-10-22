@@ -34,11 +34,11 @@ class Install(object):
             'app': self.app_value,
         }
         try:
-            driver = webdriver.Remote(self.server, desired_caps)
+            driver = webdriver.Remote(self.server, desired_caps)    # 创建driver对象
         except Exception as e:
-            _ = e
+            _ = e               # _变量总是记录最近的改变,这里用来存储异常反馈.     
         print('Something Wrong!')
 
 if __name__ == '__main__':
-    install = Install()
-    install.install()
+    install = Install()     # 创建Instal类对象
+    install.install()       # 调用instal方法给手机安装app
