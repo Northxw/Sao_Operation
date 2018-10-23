@@ -1,4 +1,10 @@
 # -*- coding：utf-8 -*-
+"""
+Created at 8:48 on Oct 23,2018
+@author: Northxw
+@title: 模拟登录微信并获取朋友圈数据
+@precautions: 代码中所有的节点都须提前通过Appium新建Session获取(亲测vivo_x7和Mi_8节点相同,其余机型未知)
+"""
 
 from appium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
@@ -40,21 +46,24 @@ class Moments(object):
         # 下一步
         next = self.wait.until(EC.presence_of_element_located((By.ID, 'com.tencent.mm:id/ast')))
         next.click()
-        sleep(20)   # 点击下一步后，本人手机获取密码输入框节点较慢，设置延时等待，否则KeyError
+        sleep(20)   # 点击下一步后，(本人)手机获取密码输入框节点较慢，设置延时等待，否则KeyError
         # 密码
         password = self.wait.until(EC.presence_of_element_located((By.ID, 'com.tencent.mm:id/ji')))
         password.set_text(PASSWORD)
         # 提交
         submit = self.wait.until(EC.presence_of_element_located((By.ID, 'com.tencent.mm:id/ast')))
         submit.click()
+
         sleep(15)   # 点击提交后，会加载是否匹配通讯录好友的选择框，延时等待，否则KeyError
-        # 通讯录匹配提示，这里选"否",加入tab节点的加载速度
+
+        # 通讯录匹配提示(这里选"否",加快tab节点的加载速度)
         determine = self.wait.until(EC.presence_of_element_located((By.ID, 'com.tencent.mm:id/au9')))
         determine.click()
 
     def enter(self):
-        sleep(120)   # 确定通讯录匹配后进入微信,会加载微信的本地数据,耗时较长,特设置延时等待(等待节点加载出来,可灵活配置)
-                     # 等待过程,可手动刷新登录后的界面, 方便下一步操作
+        sleep(120)   # 1.通讯录匹配后进入微信,会加载微信本地数据,耗时较长,设置延时等待(等待tab节点完全加载出来,可灵活配置等待时间)
+                     # 2.等待加载数据的过程,可能会闪退微信,可手动点击重新进入.
+                     # 3.亲测vivo_x7和MI_8重新登录微信并加载本地数据的耗时基本相同. 
         # 选项卡
         tab = self.wait.until(EC.presence_of_element_located((By.ID, 'com.tencent.mm:id/azn')))
         tab.click()
@@ -66,21 +75,22 @@ class Moments(object):
     def crawl(self):
         # 当前页面显示的所有动态
         while True:
+            # items存储当前手机界面的所有朋友圈.
             items = self.wait.until(
                 EC.presence_of_all_elements_located(
-                    (By.XPATH, '//*[@resource-id="com.tencent.mm:id/e6t"]//android.widget.FrameLayout')))
-            # 上划刷新朋友圈界面
+                    (By.XPATH, '//*[@resource-id="com.tencent.mm:id/e6t"]//android.widget.FrameLayout')))   # 每个e6t节点对应一条朋友圈数据
+            # 上滑刷新朋友圈
             self.driver.swipe(FLICK_START_X, FLICK_START_Y + FLICK_DISTANCE, FLICK_START_X, FLICK_START_Y)
             for item in items:
                 try:
                     # 昵称
-                    nickname = item.find_element_by_id('comment.tencent.mm:id/azl').get_attribute('text')
+                    nickname = item.find_element_by_id('comment.tencent.mm:id/azl').get_attribute('text')   # 可通过Appium新建Session获取正文的节点ID
                     # 正文
-                    content = item.find_element_by_id('comment.tencent.mm:id/jv').get_attribute('text')
+                    content = item.find_element_by_id('comment.tencent.mm:id/jv').get_attribute('text')     # 同上
                     # 日期
-                    date = item.find_element_by_id('comment.tencent.mm:id/e25').get_attribute('text')
+                    date = item.find_element_by_id('comment.tencent.mm:id/e25').get_attribute('text')       # 同上
                     # 处理日期
-                    date = self.processor.date(date)
+                    date = self.processor.date(date)    
                     print(nickname, content, date)
                     data = {
                         'nickname': nickname,
@@ -89,7 +99,7 @@ class Moments(object):
                     }
                     # 根据昵称和正文来查询信息,然后设置第三个参数为True.实现存在就更新,不存在就插入数据
                     self.collection.update({'nickname': nickname, 'content': content}, {'$set': data}, True)
-                    sleep(SCROLL_SLEEP_TIME)
+                    sleep(SCROLL_SLEEP_TIME)    # 上滑延迟
                 except NoSuchElementException:
                     pass
 
