@@ -3,7 +3,8 @@
 Created at 8:48 on Oct 23,2018
 @author: Northxw
 @title: 模拟登录微信并获取朋友圈数据
-@precautions: 代码中所有的节点都须提前通过Appium新建Session获取(亲测vivo_x7和Mi_8节点相同,其余机型未知)
+@precautions: (1) 代码中所有节点都须提前通过Appium新建Session获取(亲测vivo_x7和Mi_8节点相同,其余机型未知)
+              (2) 建议使用高性能手机测试(MI_8|MI_6等)
 """
 
 from appium import webdriver
