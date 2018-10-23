@@ -65,7 +65,8 @@ class Moments(object):
     def enter(self):
         sleep(120)   # 1.通讯录匹配后进入微信,会加载微信本地数据,耗时较长,设置延时等待(等待tab节点完全加载出来,可灵活配置等待时间)
                      # 2.等待加载数据的过程,可能会闪退微信,可手动点击重新进入.
-                     # 3.亲测vivo_x7和MI_8重新登录微信并加载本地数据的耗时基本相同. 
+                     # 3.亲测vivo_x7和MI_8重新登录微信并加载本地数据的耗时基本相同.
+                     # 4.请勿在多台安卓设备上登录微信,可能会通过手机号无法登录的结果(亲测)
         # 选项卡
         tab = self.wait.until(EC.presence_of_element_located((By.ID, 'com.tencent.mm:id/azn')))
         tab.click()
