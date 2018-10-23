@@ -30,8 +30,8 @@ class Moments(object):
         }
         self.driver = webdriver.Remote(DRIVER_SERVER, self.desired_caps)
         self.wait = WebDriverWait(self.driver, TIMEOUT)
-        self.client = MongoClient(MONGO_URL)    # 创建Mongo数据库的链接对象
-        self.db = self.client[MONGO_DB]             # 指定数据库
+        self.client = MongoClient(MONGO_URL)            # 创建Mongo数据库的链接对象
+        self.db = self.client[MONGO_DB]                 # 指定数据库
         self.collection = self.db[MONGO_COLLECTION]     # 指定集合
         # 处理日期
         self.processor = Processor()
@@ -46,7 +46,9 @@ class Moments(object):
         # 下一步
         next = self.wait.until(EC.presence_of_element_located((By.ID, 'com.tencent.mm:id/ast')))
         next.click()
+
         sleep(20)   # 点击下一步后，(本人)手机获取密码输入框节点较慢，设置延时等待，否则KeyError
+        
         # 密码
         password = self.wait.until(EC.presence_of_element_located((By.ID, 'com.tencent.mm:id/ji')))
         password.set_text(PASSWORD)
@@ -73,7 +75,6 @@ class Moments(object):
         sleep(10)   # 延迟10秒,等待朋友圈数据刷新
 
     def crawl(self):
-        # 当前页面显示的所有动态
         while True:
             # items存储当前手机界面的所有朋友圈.
             items = self.wait.until(
