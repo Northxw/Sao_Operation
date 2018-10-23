@@ -11,7 +11,9 @@ DEVICE_NAME = 'MI_8'
 # APP安装包路径（手机没有安装微信时，通过修改启动参数完成安装并启动微信执行后续操作）
 APP = os.path.abspath('.') + '/weixin.apk'
 
-# APP包名：可通过PC端查看手机文件获取(其他方法请百度谷歌)
+# APP包名-获取方法:
+#       1.打开手机上要获取的APP,命令行输入 adb shell, 接着输入 dumpsys activity | grep mFocusedActivity,回车
+#     2.结果中前者为包名,后者为入口类型(其他方法自行百度)
 APP_PACKAGE = 'com.tencent.mm'
 
 # 入口类型
