@@ -1,13 +1,14 @@
 # -*- coding:utf-8 -*-
 
 import os
+import random
 
 # 设备类型: Android 或 iOS
 PLATFORM = 'Android'
 
 # 设备名称 通过 adb devices -l 获取
-DEVICE_NAME = 'MI_8'
-# DEVICE_NAME = 'vivo_X7'
+# DEVICE_NAME = 'MI_8'
+DEVICE_NAME = 'vivo_X7'
 
 # APP包名获取的前提:
 #       打开手机上要获取的APP,命令行输入 adb shell, 接着输入 dumpsys activity | grep mFocusedActivity
@@ -32,8 +33,8 @@ FLICK_START_Y = 300
 FLICK_DISTANCE = 700
 
 
-# 滑动间隔
-SCROLL_SLEEP_TIME = 3
+# 滑动间隔(设置随机时间)
+SCROLL_SLEEP_TIME = random.randint(3,7)
 
 # 搜索关键词
 KEYWORD = 'ipad'
