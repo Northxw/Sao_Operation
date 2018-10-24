@@ -63,14 +63,11 @@ class Action(object):
                 break
 
         # 滑动结束,延时等待
-        sleep(10)
+        sleep(25)
         # 判断节点是否出现,出现执行下一步,未出现继续下滑.
         if self.wait.until(EC.presence_of_element_located((By.ID, 'com.jd.lib.productdetail:id/pd_comment_title'))):
             comments_tab_1 = self.wait.until(EC.presence_of_element_located((By.ID, 'com.jd.lib.productdetail:id/pd_comment_title')))
             comments_tab_1.click()
-        if self.wait.until(EC.presence_of_element_located((By.ID, 'com.jb.lib.productdetail:id/pd_tab3'))):
-            comments_tab_2 = self.wait.until(EC.presence_of_element_located((By.ID, 'com.jb.lib.productdetail:id/pd_tab3')))
-            comments_tab_2.click()
             # 点击进入评论详情页
         sleep(10)
 
