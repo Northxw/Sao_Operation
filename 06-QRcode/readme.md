@@ -93,7 +93,7 @@ version, level, qr_name = myqr.run(
 ```
 
 ### 说明
-+ **二维码的纠错等级**，请参考：[二维码的纠错等级](https://blog.csdn.net/johnsuna/article/details/8864046?utm_source=blogxgwz0) 这篇博客做了比较详细的说明。此外，可以在查看error_correction_level文件夹中的图片，做了对比.
++ 二维码的纠错等级，请参考：[二维码的纠错等级](https://blog.csdn.net/johnsuna/article/details/8864046?utm_source=blogxgwz0) 这篇博客做了比较详细的说明。此外，可以在查看error_correction_level文件夹中的图片，做了对比.
 + 作为文件导入可以查看文件夹file_import.
 <br/>
 
