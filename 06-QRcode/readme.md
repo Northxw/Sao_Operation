@@ -37,6 +37,7 @@ myqr https://github.com/Northxw -v 5 -l H -n northxw.jpg  -d .
 <br/>
 
 ### 艺术二维码
+![艺术二维码](https://github.com/sylnsfar/qrcode/raw/master/example/1.png)
 &emsp; 1. 使用参数 **-p** 用来将QR 二维码图像与一张同目录下的图片相结合，产生一张**黑白**图片.
 ```
 #1 -p
@@ -67,6 +68,7 @@ myqr https://github.com/Northxw -p northxw.jpg -c -n northxw_c.png
 <br/>
 
 ### 动态二维码
+![动态二维码](https://github.com/sylnsfar/qrcode/raw/master/example/zootopia_qrcode.gif)
 &emsp; 动态二维码与上述的带图片的二维码的生成方法没什么区别，你只要采用 .gif 格式的图片即可生成黑白或者彩色的动态二维码。但注意如果使用了 -n 参数自定义输出的文件名，切记其格式也必须是 .gif 格式。
 
 ```
@@ -93,9 +95,8 @@ version, level, qr_name = myqr.run(
 ```
 
 ### 说明
-+ 二维码的纠错等级，请参考：[二维码的纠错等级](https://blog.csdn.net/johnsuna/article/details/8864046?utm_source=blogxgwz0) 这篇博客做了比较详细的说明。此外，可以在查看error_correction_level文件夹中的图片，做了对比.
-+ 作为文件导入可以查看文件夹file_import.
-<br/>
++ "二维码的纠错等级"请参考：[二维码的纠错等级](https://blog.csdn.net/johnsuna/article/details/8864046?utm_source=blogxgwz0) 这篇博客做了比较详细的说明。此外，可以查看error_correction_level文件夹中的图片，做了对比.
++ "作为文件导入"请查看文件夹file_import.
 
 ### 其他
 &emsp; 图片的选择可以参考Github中给出的中文介绍。
