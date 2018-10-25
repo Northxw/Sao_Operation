@@ -10,7 +10,7 @@
 &emsp; 测试期间应该注意的几个问题, 如下：
 1. 驱动APP后, 首先会进入"京东隐私界面", 获取同意框的ID, Tap同意，如下：![京东隐私界面](https://github.com/Northxw/Sao_Operation/blob/master/05-JD/screenshot/%E4%BA%AC%E4%B8%9C%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96%E7%95%8C%E9%9D%A2.png)    <br/>
 2. 进入之后, 等待5秒+，会出现双11动画加载界面（非双11，双12期间应该不会出现类似界面），此时应该获取右上角" X "的节点ID或XPATH值，如图：![双11动画加载界面](https://github.com/Northxw/Sao_Operation/blob/master/05-JD/screenshot/%E5%8F%8C11%E5%8A%A8%E7%94%BB%E7%95%8C%E9%9D%A2.png)   <br/>
-3. 进入商品详情页后, 上侧Tab栏并未加载, 测试如下：![tab_2](https://github.com/Northxw/Sao_Operation/blob/master/05-JD/screenshot/tab_2.png) 解决方案：通过模拟上滑, 至全部评论节点处，代码如下：
+3. 进入商品详情页后, 上侧评论Tab栏并未加载, 测试如下：![tab_2](https://github.com/Northxw/Sao_Operation/blob/master/05-JD/screenshot/tab_2.png) 解决方案：通过模拟上滑, 至全部评论节点处，代码如下：
 ```
 # 处理: 直接进入详情页无法查找到pd_tab3的节点,可通过上滑刷新到全部评论的位置,点击进入,效果相同;此时pa_tab3也会加载出来)
         # 向下滑动查找评论节点(测试发现,需要滑动屏幕三次)
@@ -30,7 +30,6 @@
             # 点击进入评论详情页
         sleep(10)
 ```
-<br/>
 4. 测试期间手机APP若存在更新行为，某些节点的ID或XPATH值会更改，亲测坑。     
 <br/>
 
