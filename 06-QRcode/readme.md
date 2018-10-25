@@ -61,7 +61,7 @@ myqr https://github.com/Northxw -p northxw.jpg -c
 myqr https://github.com -p github.jpg [-c] -con 1.5 -bri 1.6
 ```
 <br>
-&emsp; 4. 你可以使用上述参数，如下:
+&emsp; 4. 还可以使用上面介绍过的参数，如下:
 
 ```
 myqr https://github.com/Northxw -p northxw.jpg -c -n northxw_c.png
@@ -96,8 +96,8 @@ version, level, qr_name = myqr.run(
 ```
 
 ### 说明
-+ "二维码的纠错等级"请参考：[二维码的纠错等级](https://blog.csdn.net/johnsuna/article/details/8864046?utm_source=blogxgwz0) 这篇博客做了比较详细的说明。此外，可以查看error_correction_level文件夹中的图片，做了对比.
-+ "作为文件导入"请查看文件夹file_import.
++ " 二维码的纠错等级 " 请参考：[二维码的纠错等级](https://blog.csdn.net/johnsuna/article/details/8864046?utm_source=blogxgwz0) 这篇博客做了比较详细的说明。此外，可以查看error_correction_level文件夹中的图片，做了对比.
++ " 作为文件导入 "的生成方式, 请查看文件夹file_import.
 
 ### 其他
 &emsp; 图片的选择可以参考Github中给出的中文介绍。
