@@ -37,7 +37,8 @@ myqr https://github.com/Northxw -v 5 -l H -n northxw.jpg  -d .
 <br/>
 
 ### 艺术二维码
-![艺术二维码](https://github.com/sylnsfar/qrcode/raw/master/example/1.png)
+![艺术二维码](https://github.com/sylnsfar/qrcode/raw/master/example/1.png)   
+
 &emsp; 1. 使用参数 **-p** 用来将QR 二维码图像与一张同目录下的图片相结合，产生一张**黑白**图片.
 ```
 #1 -p
