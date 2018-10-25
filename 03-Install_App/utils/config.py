@@ -9,7 +9,7 @@ PLANTFORM = 'Android'
 # 设备名称
 DEVIDE_NAME = 'vivo_X7'
 
-# APP包名(可通过手机连接PC,开启USB调试,进入手机文件查找)
+# APP包名(方法 - 首先,命令行输入adb shell,接着输入dumpsys activity | grep mFocusedActivity即可查到)
 APP_PACKAGE = 'com.tencent.mm'
 
 # 入口类名
